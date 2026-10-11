@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone &amp; more · Telefoons &amp; reparatie · Amsterdam</title>
+<meta name="description" content="Phone & more aan de Nieuwezijds Voorburgwal in Amsterdam. Telefoons, reparatie, accessoires en bagageopslag.">
+<style>
+:root{
+  --night:#0B1B33;
+  --night-2:#12294F;
+  --blue:#2E7CF6;
+  --blue-deep:#1B5FD0;
+  --sky:#EAF2FF;
+  --bg:#F4F7FC;
+  --card:#FFFFFF;
+  --ink:#13233F;
+  --ink-soft:#5A6B85;
+  --line:#DCE7F7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;
+  max-width:640px;margin:0 auto;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{line-height:1.25;letter-spacing:-.01em}
+.wrap{padding:0 20px}
+
+/* ── Bovenbalk ── */
+.topbar{background:var(--night);color:#C9D8F2;text-align:center;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;padding:.6rem 1rem}
+.topbar b{color:#fff}
+.langbar{background:var(--night);display:flex;justify-content:center;gap:.5rem;padding:0 .8rem .7rem}
+.langbar button{
+  font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.12em;
+  background:transparent;color:#9DB4DD;border:1.5px solid #2A4a7F;border-radius:999px;
+  padding:.3rem 1.1rem;cursor:pointer;transition:all .15s ease;
+}
+.langbar button.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 2px 10px rgba(46,124,246,.5)}
+
+/* ── Header ── */
+.hero-head{background:linear-gradient(160deg,var(--night) 0%,var(--night-2) 70%,#16325E 100%);color:#fff;text-align:center;padding:2.2rem 1.2rem 2.4rem;position:relative;overflow:hidden}
+.hero-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+.logo-chip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(46,124,246,.16);border:1px solid rgba(46,124,246,.55);border-radius:12px;padding:.4rem .9rem;font-weight:800;font-size:1.05rem;letter-spacing:.02em}
+.logo-chip .dot{width:.65rem;height:.65rem;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}
+.hero-head h1{font-size:2.3rem;font-weight:800;margin:1rem 0 .2rem}
+.hero-head .tag{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:#9DB4DD;margin-bottom:1rem}
+.hero-head .lede{color:#C9D8F2;max-width:36ch;margin:0 auto 1.2rem;font-size:.98rem}
+.phone-fig{margin:0 auto 1.2rem;max-width:170px}
+.rating{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.08);border:1px solid rgba(46,124,246,.5);border-radius:999px;padding:.35rem .95rem;font-size:.9rem;color:#C9D8F2}
+.rating .stars{color:#FFC531;letter-spacing:.05em}
+.cta-row{display:flex;gap:.7rem;justify-content:center;margin-top:1.2rem;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.8rem 1.7rem;border-radius:999px;font-size:1rem;transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(46,124,246,.45)}
+.btn-ghost{border:2px solid var(--blue);color:#fff;background:transparent}
+
+/* ── Secties ── */
+section{padding:1.8rem 0}
+.sec-head{text-align:center;margin-bottom:1.2rem}
+.sec-head .kicker{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:.3rem}
+.sec-head h2{font-size:1.55rem;font-weight:800;color:var(--night)}
+.sec-head p{color:var(--ink-soft);font-size:.95rem;max-width:38ch;margin:.3rem auto 0}
+
+/* ── Diensten ── */
+.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin-bottom:.75rem;display:flex;gap:.9rem;align-items:flex-start;box-shadow:0 2px 10px rgba(11,27,51,.06)}
+.svc .ico{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+.svc h3{font-size:1.05rem;font-weight:750;color:var(--night)}
+.svc p{font-size:.9rem;color:var(--ink-soft);margin-top:.15rem}
+.svc.bag{background:linear-gradient(120deg,#0B1B33,#16325E);border:none}
+.svc.bag h3{color:#fff}
+.svc.bag p{color:#C9D8F2}
+
+/* ── Openingstijden ── */
+.tijden{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(11,27,51,.06)}
+.tijden table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tijden td{padding:.72rem 1.1rem;border-bottom:1px solid var(--sky)}
+.tijden tr:last-child td{border-bottom:none}
+.tijden td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+.tijden tr.vandaag td{background:var(--sky);font-weight:700;color:var(--blue-deep)}
+.tijden tr.vandaag td:first-child::after{content:"· vandaag";font-weight:400;font-size:.8rem;color:var(--ink-soft);margin-left:.4rem}
+body.lang-es .tijden tr.vandaag td:first-child::after{content:"· hoy"}
+body.lang-en .tijden tr.vandaag td:first-child::after{content:"· today"}
+.status{text-align:center;margin-top:.8rem;font-size:.95rem}
+.status .open{color:#1B8A3D;font-weight:700}
+.status .closed{color:#C0392B;font-weight:700}
+
+/* ── Locatie ── */
+.loc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.4rem;text-align:center;box-shadow:0 2px 10px rgba(11,27,51,.06)}
+.loc address{font-style:normal;font-size:1.02rem;line-height:1.7}
+.loc address b{color:var(--night)}
+.loc .tel{font-size:1.3rem;font-weight:800;color:var(--blue-deep);text-decoration:none}
+.loc .zone{margin-top:.6rem;font-size:.88rem;color:var(--ink-soft)}
+
+/* ── QR ── */
+.qr-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.qr-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem;text-align:center;box-shadow:0 2px 10px rgba(11,27,51,.06);flex:1 1 200px;max-width:260px}
+.qr-card img{width:150px;height:150px;border:3px solid var(--blue);border-radius:10px;background:#fff}
+.qr-card h3{font-size:1.02rem;margin:.7rem 0 .2rem;color:var(--night)}
+.qr-card p{font-size:.87rem;color:var(--ink-soft)}
+
+/* ── Footer ── */
+footer{background:var(--night);color:#9DB4DD;text-align:center;padding:1.8rem 1.2rem 2.2rem;margin-top:1.6rem;font-size:.83rem}
+footer .brand{color:#fff;font-weight:800;font-size:1.05rem;margin-bottom:.3rem}
+footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.6;font-style:italic}
+</style>
+</head>
+<body class="lang-nl">
+
+<div class="topbar" data-i18n="topbar">Nieuwezijds Voorburgwal 144 · <b>Amsterdam</b></div>
+<div class="langbar" role="group" aria-label="Taal / Idioma / Language">
+  <button type="button" data-lang="nl" class="active">NL</button>
+  <button type="button" data-lang="es">ES</button>
+  <button type="button" data-lang="en">EN</button>
+</div>
+
+<header class="hero-head">
+  <div class="logo-chip"><span class="dot"></span>Phone &amp; more</div>
+  <h1 data-i18n="hero_title">Alles voor je telefoon</h1>
+  <div class="tag" data-i18n="hero_tag">Telefoons · Reparatie · Bagageopslag</div>
+  <figure class="phone-fig" aria-label="Illustratie van een smartphone">
+    <svg viewBox="0 0 140 240" role="img" aria-hidden="true">
+      <rect x="25" y="8" width="90" height="224" rx="16" fill="#0B1B33" stroke="#2E7CF6" stroke-width="4"/>
+      <rect x="35" y="26" width="70" height="150" rx="6" fill="#2E7CF6" opacity=".28"/>
+      <rect x="35" y="26" width="70" height="150" rx="6" fill="none" stroke="#2E7CF6" stroke-width="2"/>
+      <circle cx="70" cy="60" r="14" fill="none" stroke="#fff" stroke-width="3" opacity=".9"/>
+      <rect x="45" y="90" width="50" height="8" rx="4" fill="#fff" opacity=".7"/>
+      <rect x="45" y="106" width="34" height="8" rx="4" fill="#fff" opacity=".45"/>
+      <rect x="45" y="122" width="42" height="8" rx="4" fill="#fff" opacity=".45"/>
+      <circle cx="70" cy="206" r="7" fill="none" stroke="#2E7CF6" stroke-width="3"/>
+      <rect x="58" y="12" width="24" height="5" rx="2.5" fill="#2E7CF6"/>
+      <g fill="#2E7CF6" opacity=".85">
+        <circle cx="14" cy="60" r="3"/><circle cx="126" cy="52" r="2.4"/>
+        <circle cx="122" cy="150" r="3"/><circle cx="18" cy="160" r="2.4"/>
+      </g>
+    </svg>
+  </figure>
+  <p class="lede" data-i18n="hero_p">Verkoop, reparatie en accessoires — midden in het centrum van Amsterdam, op een steenworp van het Centraal Station.</p>
+  <div class="rating"><span class="stars">★★★★☆</span><span data-i18n="rating_text"><b>4,3</b> · 34 Google-reviews</span></div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="tel:+31644744344" data-i18n="btn_call">Bel ons</a>
+    <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Nieuwezijds+Voorburgwal+144,+1012+SJ+Amsterdam" target="_blank" rel="noopener" data-i18n="btn_route">Route</a>
+  </div>
+</header>
+
+<main>
+  <!-- DIENSTEN -->
+  <section class="wrap" aria-label="Diensten">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="svc_kicker">Wat we doen</div>
+      <h2 data-i18n="svc_h">Diensten</h2>
+      <p data-i18n="svc_p">We sell all kind of phones — en alles eromheen.</p>
+    </div>
+
+    <div class="svc">
+      <div class="ico">📱</div>
+      <div><h3 data-i18n="s1_t">Telefoonreparatie</h3>
+      <p data-i18n="s1_p">Snelle en vakkundige reparatie van je smartphone.</p></div>
+    </div>
+    <div class="svc">
+      <div class="ico">🛒</div>
+      <div><h3 data-i18n="s2_t">Telefoons (verkoop)</h3>
+      <p data-i18n="s2_p">We sell all kind of phones — nieuw en scherp geprijsd.</p></div>
+    </div>
+    <div class="svc">
+      <div class="ico">📲</div>
+      <div><h3 data-i18n="s3_t">Hoesjes &amp; accessoires</h3>
+      <p data-i18n="s3_p">Ruime keuze hoesjes en accessoires voor elk model.</p></div>
+    </div>
+    <div class="svc">
+      <div class="ico">🔌</div>
+      <div><h3 data-i18n="s4_t">Opladers &amp; kabels</h3>
+      <p data-i18n="s4_p">Opladers, kabels en adapters — altijd op voorraad.</p></div>
+    </div>
+    <div class="svc">
+      <div class="ico">🛡️</div>
+      <div><h3 data-i18n="s5_t">Schermbeschermers</h3>
+      <p data-i18n="s5_p">Bescherm je scherm, direct vakkundig aangebracht.</p></div>
+    </div>
+    <div class="svc">
+      <div class="ico">📶</div>
+      <div><h3 data-i18n="s6_t">Prepaid simkaarten</h3>
+      <p data-i18n="s6_p">Blijf bereikbaar — prepaid simkaarten voor elke reis.</p></div>
+    </div>
+    <div class="svc bag">
+      <div class="ico">🧳</div>
+      <div><h3 data-i18n="s7_t">Bagageopslag</h3>
+      <p data-i18n="s7_p">Bounce Luggage Storage: bewaar je bagage veilig terwijl je de stad verkent.</p></div>
+    </div>
+  </section>
+
+  <!-- OPENINGSTIJDEN -->
+  <section class="wrap" aria-label="Openingstijden">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="hours_kicker">Wanneer</div>
+      <h2 data-i18n="hours_h">Openingstijden</h2>
+    </div>
+    <div class="tijden">
+      <table>
+        <tr data-days="1,2,3,4"><td data-i18n="day_mon_thu">Maandag t/m donderdag</td><td>11:00 – 20:00</td></tr>
+        <tr data-days="5"><td data-i18n="day_fri">Vrijdag</td><td>11:00 – 12:45 &amp; 13:20 – 21:00</td></tr>
+        <tr data-days="6"><td data-i18n="day_sat">Zaterdag</td><td>11:00 – 19:00</td></tr>
+        <tr data-days="0"><td data-i18n="day_sun">Zondag</td><td>11:00 – 20:00</td></tr>
+      </table>
+    </div>
+    <p class="status" id="status">…</p>
+  </section>
+
+  <!-- LOCATIE -->
+  <section class="wrap" aria-label="Locatie en contact">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="loc_kicker">Waar</div>
+      <h2 data-i18n="loc_h">Bezoek ons</h2>
+      <p data-i18n="loc_p">Op een steenworp van Amsterdam Centraal en de Dam.</p>
+    </div>
+    <div class="loc">
+      <address>
+        <b>Phone &amp; more</b><br>
+        Nieuwezijds Voorburgwal 144<br>
+        1012 SJ Amsterdam<br><br>
+        <a class="tel" href="tel:+31644744344">+31 6 44744344</a>
+      </address>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+31644744344" data-i18n="btn_call_loc">Bellen</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Nieuwezijds+Voorburgwal+144,+1012+SJ+Amsterdam" target="_blank" rel="noopener" data-i18n="btn_route_loc" style="border-color:var(--blue-deep);color:var(--blue-deep)">Route plannen</a>
+      </div>
+      <div class="zone" data-i18n="loc_zone">Zone Damrak/Dam — midden in het centrum.</div>
+    </div>
+  </section>
+
+  <!-- QR -->
+  <section class="wrap" aria-label="QR codes">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="qr_kicker">Scan</div>
+      <h2 data-i18n="qr_h">Scan &amp; ga</h2>
+      <p data-i18n="qr_p">Scan de QR-code met je telefoon.</p>
+    </div>
+    <div class="qr-row">
+      <div class="qr-card">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Nieuwezijds+Voorburgwal+144,+1012+SJ+Amsterdam" target="_blank" rel="noopener"><img src="qr-route.png" alt="QR-code route" width="150" height="150"></a>
+        <h3 data-i18n="qr_route_t">Route</h3>
+        <p data-i18n="qr_route_p">Direct naar ons op Google Maps.</p>
+      </div>
+      <div class="qr-card">
+        <a href="https://maps.app.goo.gl/2RkiF3bhJsphbEPW7" target="_blank" rel="noopener"><img src="qr-review.png" alt="QR-code review" width="150" height="150"></a>
+        <h3 data-i18n="qr_review_t">Review</h3>
+        <p data-i18n="qr_review_p">Laat een Google-review achter.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand">Phone &amp; more</div>
+  <p data-i18n="footer_p">Nieuwezijds Voorburgwal 144 · 1012 SJ Amsterdam · +31 6 44744344</p>
+  <p class="demo" data-i18n="footer_demo">Conceptwebsite ter beoordeling — nog niet de officiële site van de winkel.</p>
+</footer>
+
+<script>
+// ── Taal / Idioma / Language ──
+var I18N = {
+es: {
+  title: "Phone & more · Teléfonos y reparación · Ámsterdam",
+  topbar: "Nieuwezijds Voorburgwal 144 · <b>Ámsterdam</b>",
+  hero_title: "Todo para tu teléfono",
+  hero_tag: "Teléfonos · Reparación · Guardaequipajes",
+  hero_p: "Venta, reparación y accesorios — en pleno centro de Ámsterdam, a pasos de la Estación Central.",
+  rating_text: "<b>4,3</b> · 34 reseñas en Google",
+  btn_call: "Llámanos",
+  btn_route: "Cómo llegar",
+  svc_kicker: "Lo que hacemos",
+  svc_h: "Servicios",
+  svc_p: "We sell all kind of phones — y todo lo que los rodea.",
+  s1_t: "Reparación de teléfonos",
+  s1_p: "Reparación rápida y profesional de tu smartphone.",
+  s2_t: "Teléfonos (venta)",
+  s2_p: "We sell all kind of phones — nuevos y a buen precio.",
+  s3_t: "Fundas y accesorios",
+  s3_p: "Amplia selección de fundas y accesorios para cada modelo.",
+  s4_t: "Cargadores y cables",
+  s4_p: "Cargadores, cables y adaptadores — siempre en stock.",
+  s5_t: "Protectores de pantalla",
+  s5_p: "Protege tu pantalla, instalada por profesionales.",
+  s6_t: "Tarjetas SIM prepago",
+  s6_p: "Sigue conectado — SIM prepago para cada viaje.",
+  s7_t: "Guardaequipajes",
+  s7_p: "Bounce Luggage Storage: guarda tu equipaje con seguridad mientras exploras la ciudad.",
+  hours_kicker: "Cuándo",
+  hours_h: "Horario",
+  day_mon_thu: "Lunes a jueves",
+  day_fri: "Viernes",
+  day_sat: "Sábado",
+  day_sun: "Domingo",
+  loc_kicker: "Dónde",
+  loc_h: "Visítanos",
+  loc_p: "A pasos de la Estación Central y la Plaza Dam.",
+  btn_call_loc: "Llamar",
+  btn_route_loc: "Cómo llegar",
+  loc_zone: "Zona Damrak/Dam — en pleno centro.",
+  qr_kicker: "Escanea",
+  qr_h: "Escanea y ven",
+  qr_p: "Escanea el código QR con tu teléfono.",
+  qr_route_t: "Cómo llegar",
+  qr_route_p: "Llévame en Google Maps.",
+  qr_review_t: "Reseña",
+  qr_review_p: "Déjanos tu reseña en Google.",
+  footer_p: "Nieuwezijds Voorburgwal 144 · 1012 SJ Ámsterdam · +31 6 44744344",
+  footer_demo: "Sitio web conceptual en revisión: aún no es la página oficial de la tienda."
+},
+en: {
+  title: "Phone & more · Phones & repair · Amsterdam",
+  topbar: "Nieuwezijds Voorburgwal 144 · <b>Amsterdam</b>",
+  hero_title: "Everything for your phone",
+  hero_tag: "Phones · Repair · Luggage storage",
+  hero_p: "Sales, repair and accessories — right in the heart of Amsterdam, a stone's throw from Central Station.",
+  rating_text: "<b>4.3</b> · 34 Google reviews",
+  btn_call: "Call us",
+  btn_route: "Directions",
+  svc_kicker: "What we do",
+  svc_h: "Services",
+  svc_p: "We sell all kind of phones — and everything around them.",
+  s1_t: "Phone repair",
+  s1_p: "Fast, professional smartphone repair.",
+  s2_t: "Phones (sales)",
+  s2_p: "We sell all kind of phones — new and sharply priced.",
+  s3_t: "Cases & accessories",
+  s3_p: "Wide range of cases and accessories for every model.",
+  s4_t: "Chargers & cables",
+  s4_p: "Chargers, cables and adapters — always in stock.",
+  s5_t: "Screen protectors",
+  s5_p: "Protect your screen, applied by professionals.",
+  s6_t: "Prepaid SIM cards",
+  s6_p: "Stay connected — prepaid SIM cards for every trip.",
+  s7_t: "Luggage storage",
+  s7_p: "Bounce Luggage Storage: keep your bags safe while you explore the city.",
+  hours_kicker: "When",
+  hours_h: "Opening hours",
+  day_mon_thu: "Monday to Thursday",
+  day_fri: "Friday",
+  day_sat: "Saturday",
+  day_sun: "Sunday",
+  loc_kicker: "Where",
+  loc_h: "Visit us",
+  loc_p: "A stone's throw from Central Station and Dam Square.",
+  btn_call_loc: "Call",
+  btn_route_loc: "Directions",
+  loc_zone: "Damrak/Dam area — right in the city centre.",
+  qr_kicker: "Scan",
+  qr_h: "Scan & visit",
+  qr_p: "Scan the QR code with your phone.",
+  qr_route_t: "Directions",
+  qr_route_p: "Take me there on Google Maps.",
+  qr_review_t: "Review",
+  qr_review_p: "Leave us a Google review.",
+  footer_p: "Nieuwezijds Voorburgwal 144 · 1012 SJ Amsterdam · +31 6 44744344",
+  footer_demo: "Concept website under review — not yet the shop's official site."
+}};
+
+var STATUS_TXT = {
+  nl: {open:"● Nu open", closed:"● Nu gesloten", closes:"sluit om", opens:"opent om", opensTomorrow:"opent morgen om"},
+  es: {open:"● Abierto ahora", closed:"● Cerrado ahora", closes:"cierra a las", opens:"abre a las", opensTomorrow:"abre mañana a las"},
+  en: {open:"● Open now", closed:"● Closed now", closes:"closes at", opens:"opens at", opensTomorrow:"opens tomorrow at"}
+};
+
+var LANG = "nl";
+var NLN = {};
+function fmt(m){ return Math.floor(m/60)+":"+String(m%60).padStart(2,"0"); }
+
+// Vensters per dag (0=zo..6=za), in minuten vanaf middernacht
+function windows(dag){
+  switch(dag){
+    case 1: case 2: case 3: case 4: return [[660,1200]];
+    case 5: return [[660,765],[800,1260]];
+    case 6: return [[660,1140]];
+    case 0: return [[660,1200]];
+  }
+}
+function updateStatus(){
+  var nu = new Date();
+  var dag = nu.getDay();
+  var min = nu.getHours()*60 + nu.getMinutes();
+  var t = STATUS_TXT[LANG];
+  var el = document.getElementById("status");
+  var w = windows(dag), txt = "";
+  for(var i=0;i<w.length;i++){
+    if(min >= w[i][0] && min < w[i][1]){ txt = '<span class="open">'+t.open+'</span> · '+t.closes+' '+fmt(w[i][1]); break; }
+    if(min < w[i][0]){ txt = '<span class="closed">'+t.closed+'</span> · '+t.opens+' '+fmt(w[i][0]); break; }
+  }
+  if(!txt){
+    var nw = windows((dag+1)%7);
+    txt = '<span class="closed">'+t.closed+'</span> · '+t.opensTomorrow+' '+fmt(nw[0][0]);
+  }
+  el.innerHTML = txt;
+}
+function setLang(l){
+  LANG = l;
+  document.documentElement.lang = l;
+  document.body.className = "lang-"+l;
+  var d = (l === "nl") ? NLN : (I18N[l] || {});
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var k = el.getAttribute("data-i18n");
+    if(d[k] != null) el.innerHTML = d[k];
+  });
+  if(d.title) document.title = d.title;
+  document.querySelectorAll(".langbar button").forEach(function(b){
+    b.classList.toggle("active", b.getAttribute("data-lang")===l);
+  });
+  document.querySelectorAll(".tijden tr").forEach(function(tr){
+    var dagen = tr.getAttribute("data-days").split(",").map(Number);
+    tr.classList.toggle("vandaag", dagen.indexOf(new Date().getDay())!==-1);
+  });
+  updateStatus();
+}
+document.querySelectorAll(".langbar button").forEach(function(b){
+  b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+});
+(function init(){
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    NLN[el.getAttribute("data-i18n")] = el.innerHTML;
+  });
+  NLN.title = document.title;
+  var dag = new Date().getDay();
+  document.querySelectorAll(".tijden tr").forEach(function(tr){
+    var dagen = tr.getAttribute("data-days").split(",").map(Number);
+    if(dagen.indexOf(dag)!==-1) tr.classList.add("vandaag");
+  });
+  updateStatus();
+})();
+</script>
+</body>
+</html>
